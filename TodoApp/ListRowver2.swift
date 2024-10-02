@@ -74,6 +74,7 @@ struct ListRowver2 : View {
 
 #Preview {
     DashboardView()
+        .environmentObject(UserDataver2())
 }
 
 

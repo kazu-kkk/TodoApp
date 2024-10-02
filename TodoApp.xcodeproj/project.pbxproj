@@ -38,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CB880E22CADC478006ECC2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C75FB5F2CAAF08200085D71 /* DashboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6CE231FC2C79D3A4000B517C = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				6CE232082C79D3A4000B517C /* TodoAppApp.swift */,
-				6C75FB5F2CAAF08200085D71 /* DashboardView.swift */,
+				6CB880E22CADC478006ECC2E /* Views */,
 				6C75FB632CAAF16800085D71 /* UserTaskver2.swift */,
 				6C75FB652CAC51F100085D71 /* UserDataver2.swift */,
 				6C75FB672CAC531B00085D71 /* ListRowver2.swift */,
