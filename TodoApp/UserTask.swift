@@ -15,6 +15,7 @@ struct Task: Identifiable, Equatable{
     var checked: Bool
     var date: String
     
+    
     init(title: String, checked: Bool, date: String){
         self.title = title
         self.checked = checked
