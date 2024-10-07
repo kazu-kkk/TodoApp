@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ListRowver2 : View {
+struct ListRow : View {
     let task: String
     let date: String
     var isCheck : Bool
@@ -20,6 +20,23 @@ struct ListRowver2 : View {
         HStack(spacing: 10) {
             //チェック
             if (isCheck == true) {
+                //未完了のとき
+                ZStack() {
+                    Ellipse()
+                        .foregroundColor(.white) // ここで背景色を設定
+                        .frame(width: 15, height: 15)
+                        .offset(x: 0, y: 0)
+                        .offset(x: 0, y: 0)
+                    Ellipse()
+                        .foregroundColor(Color(red: 0.23, green: 0.69, blue: 0.98)) // ここで青色を設定
+                        .frame(width: 7, height: 7)
+                        .offset(x: 0, y: 0)
+                }
+                    .frame(width: 15, height: 15)
+
+
+            } else  {
+                
                 //完了のとき
                 Ellipse()
                     .frame(width: 15, height: 15)
@@ -28,21 +45,6 @@ struct ListRowver2 : View {
                         Ellipse()
                             .stroke(Color.gray, lineWidth: 1)
                     )
-            } else {
-                //未完了のとき
-                ZStack() {
-                Ellipse()
-                .foregroundColor(.clear)
-                .frame(width: 15, height: 15)
-                .background(.white)
-                .offset(x: 0, y: 0)
-                Ellipse()
-                .foregroundColor(.clear)
-                .frame(width: 7, height: 7)
-                .background(Color(red: 0.23, green: 0.69, blue: 0.98))
-                .offset(x: 0, y: 0)
-                }
-                .frame(width: 15, height: 15)
                 
 
             }
@@ -74,7 +76,7 @@ struct ListRowver2 : View {
 
 #Preview {
     DashboardView()
-        .environmentObject(UserDataver2())
+        .environmentObject(UserData())
 }
 
 

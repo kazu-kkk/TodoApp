@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct Taskver2: Identifiable, Equatable{
+
+
+struct Task: Identifiable, Equatable{
     let id = UUID()
     var title: String
     var checked: Bool
@@ -19,3 +21,6 @@ struct Taskver2: Identifiable, Equatable{
         self.date = date
     }
 }
+
+
+
