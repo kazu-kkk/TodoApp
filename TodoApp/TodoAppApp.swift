@@ -12,7 +12,11 @@ struct TodoAppApp: App {
     var body: some Scene {
         WindowGroup {
             DashboardView()
-                .environmentObject(UserDataver2())
+                .environmentObject(UserData())
         }
     }
+
 }
+
+
+
