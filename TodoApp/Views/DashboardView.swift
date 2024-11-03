@@ -7,11 +7,31 @@ struct DashboardView: View {
     @State var taskDate = ""
     
     var body: some View {
-        NavigationView {
+        
+        
+        VStack {
+            //ヘッダー
+            header
+            
             VStack {
-                image
+                
+                VStack(spacing: 17) {
+                    Text("タスク連続達成日数")
+                        .font(Font.custom("Inter", size: 24).weight(.bold))
+                        .foregroundColor(.black)
+                    HStack(alignment: .bottom, spacing: 6) {
+                        Text("21")
+                            .font(Font.custom("Inter", size: 80).weight(.bold))
+                            .foregroundColor(.black)
+                        Text("days")
+                            .font(Font.custom("Inter", size: 40).weight(.bold))
+                            .foregroundColor(.black)
+                    }
+                }
+                .frame(width: 350, height: 143)
+                
                 Spacer()
-                text
+                    .frame(height: 40)
                 
                 VStack {
                     // ランダムな3つのタスクを表示
@@ -25,7 +45,8 @@ struct DashboardView: View {
                             ListRow(task: task.title, date: task.date, isCheck: task.checked)
                         }
                     }
-                    
+                    Spacer()
+                        .frame(height: 40)
                     // ランダム再表示ボタン
                     Button(action: {
                         // ランダムに再表示
@@ -69,13 +90,13 @@ struct DashboardView: View {
         // フィルタリングされたタスクからランダムに3つ取得
         randomTasks = Array(uncheckedTasks.shuffled().prefix(3))
     }
-
-    func createTask() {
-        let newTask = Task(title: self.taskTitle, checked: false, date: taskDate)
-        self.userData.tasks.insert(newTask, at: 0)
-        self.taskTitle = ""
-        self.userData.isEditing = false
-    }
+    
+    //    func createTask() {
+    //        let newTask = Task(title: self.taskTitle, checked: false, date: taskDate)
+    //        self.userData.tasks.insert(newTask, at: 0)
+    //        self.taskTitle = ""
+    //        self.userData.isEditing = false
+    //    }
 }
 
 #Preview {
@@ -84,13 +105,13 @@ struct DashboardView: View {
 }
 
 extension DashboardView {
+    //見出し
+    private var header: some View {
+        Header(heading: "アプリ名")
+    }
+    
     private var image: some View {
         Image("image")
     }
     
-    private var text: some View {
-        Text("Today's Tasks")
-            .font(Font.custom("Inter", size: 32).weight(.bold))
-            .foregroundColor(.black)
-    }
 }
