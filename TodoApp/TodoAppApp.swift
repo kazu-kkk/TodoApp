@@ -11,9 +11,12 @@ import SwiftUI
 struct TodoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            ContentView()
                 .environmentObject(UserData())
         }
     }
 
 }
+
+
+
