@@ -67,13 +67,7 @@ struct SettingsView: View {
     }
 }
 
-// 各設定項目の詳細画面
-struct AccountSettingsView: View {
-    var body: some View {
-        Text("アカウント設定")
-            .navigationTitle("アカウント")
-    }
-}
+
 
 struct NotificationSettingsView: View {
     var body: some View {

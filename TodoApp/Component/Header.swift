@@ -15,7 +15,7 @@ struct Header: View {
         VStack {
             Spacer()
             Text(heading)
-                .font(Font.custom("Inter", size: 32).weight(.bold))
+                .font(Font.custom("Inter", size: 28).weight(.bold))
                 .foregroundColor(.white)
             
         }
